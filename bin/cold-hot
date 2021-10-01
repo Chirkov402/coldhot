@@ -8,7 +8,6 @@
         require_once($autoloadPathForPackagist);
     }
 
-    use function Chirkov402\coldhot\Controller\startGame;
+    use function Chirkov402\cold_hot\Controller\menu;
 
-    startGame();
-?>
+    menu();
