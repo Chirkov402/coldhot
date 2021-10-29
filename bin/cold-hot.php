@@ -12,9 +12,11 @@ if (file_exists($vendorGit)) {
 use function Chirkov402\cold_hot\Controller\menu;
 
 if (isset($argv[1])) {
-    $key = $argv[1];
-    menu($key, $argv[2]);
+    if ($argv[1] === "-r" || $argv[1] === "--replay") {
+        menu($argv[1], $argv[2]);
+    } else {
+        menu($argv[1], null);
+    }
 } else {
-    $key = "-n";
-    menu($key, $argv[2]);
+    menu("-n", null);
 }
